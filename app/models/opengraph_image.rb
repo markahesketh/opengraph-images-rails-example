@@ -11,11 +11,7 @@ class OpengraphImage
 
   def render_in(view_context)
     svg = view_context.render(template: "opengraph_image/show", formats: [:svg], locals: { title:, byline:, logo: })
-    case view_context.request.format.symbol
-    when :png then ::Vips::Image.svgload_buffer(svg).write_to_buffer(".png")
-    when :svg then svg
-    else raise "Unsupported format"
-    end
+    ::Vips::Image.svgload_buffer(svg).write_to_buffer(".png")
   end
 
   private

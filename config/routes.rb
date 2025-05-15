@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :posts do
-    resource :opengraph_image, only: [ :show ], controller: "opengraph_image"
+    resource :opengraph_image, only: [ :show ], constraints: { format: :png }
   end
 end
