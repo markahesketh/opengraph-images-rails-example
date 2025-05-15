@@ -14,11 +14,12 @@
   <!-- Byline -->
   <text fill="#fff" font-family="sans-serif" font-size="48" font-weight="400" letter-spacing="-3px">
     <% text_wrap(byline, max_line_length: 50).each_with_index do |line, idx| %>
-        <tspan x="80" y="<%= title_y + 80 + (58 * idx) %>"><%= line %></tspan>
+      <tspan x="80" y="<%= title_y + 80 + (58 * idx) %>"><%= line %></tspan>
     <% end %>
   </text>
 
   <!-- Avatar -->
-  <svg x="950" y="400"  xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+  <svg x="950" y="400" xmlns="http://www.w3.org/2000/svg" width="200" height="200">
     <image href="<%= logo.to_base64 %>" width="200" height="200"/>
-  </svg></svg>
+  </svg>
+</svg>
